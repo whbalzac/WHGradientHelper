@@ -164,6 +164,7 @@ typedef NS_ENUM(NSInteger, WHGradientDirection) {
 //   ChromatoAnimation
 + (void)addGradientChromatoAnimation:(UIView *)view;
 
+
 //   LableText LinearGradient and ChromatoAnimation
 + (void)addLinearGradientForLableText:(UIView *)parentView lable:(UILabel *)lable start:(UIColor *)startColor and:(UIColor *)endColor;  /* don't need call 'addSubview:' for lable */
 + (void)addGradientChromatoAnimationForLableText:(UIView *)parentView lable:(UILabel *)lable; /* don't need call 'addSubview:' for lable */
