@@ -1,5 +1,5 @@
 # WHGradientHelper
->###前言
+> ### 前言
 
 你是否注意到，“渐变设计”已经成为了一种美的体验。无论是APP的icon，还是PPT的背景，渐变色都比纯色要多一分丰富。
 ![iOS7 Lockscreen by Michael Shanks](http://upload-images.jianshu.io/upload_images/2963444-fd259859dd1cbfd8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -12,12 +12,12 @@
 4. Lable字体渐变
 5. Lable字体渐变动画
 
-######最终效果：
+###### 最终效果：
 ![简书logo渐变](http://upload-images.jianshu.io/upload_images/2963444-7701e4e2e89cf60f.gif?imageMogr2/auto-orient/strip)
 ______
->###WHGradientHelper具体实现及效果
+> ### WHGradientHelper具体实现及效果
 
-####1. 线性渐变(Linear Gradient)
+#### 1. 线性渐变(Linear Gradient)
 “线性渐变”按照渐变方向分成4种类型，分别是：
 
 ````
@@ -41,10 +41,10 @@ typedef NS_ENUM(NSInteger, WHGradientDirection) {
 - 利用context，创建layer的image
 **PS.** 当然你可以直接返回layer，然后加在view上，但这样需要自己维护layer的frame，相信我，你不会愿意的，特别是navigationBar的backimage。
 
-######效果图：
+###### 效果图：
 ![线性渐变](http://upload-images.jianshu.io/upload_images/2963444-1675b412323f83ba.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-####2. 径向渐变(Radial Gradient)
+#### 2. 径向渐变(Radial Gradient)
 主要实现方法 `CGContextDrawRadialGradient:`:
 
 ````
@@ -57,10 +57,10 @@ CG_EXTERN void CGContextDrawRadialGradient(CGContextRef cg_nullable c,
 - 调用CGContextDrawLinearGradient或CGContextDrawRadialGradient函数并提供一个上下文、一个CGGradient对象、绘制选项和开始结束几何图形来绘制渐变。
 - 当不再需要时释放CGGradient对象。
 
-######效果图：
+###### 效果图：
 ![径向渐变](http://upload-images.jianshu.io/upload_images/2963444-0008f3e69af8269e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-####3. 渐变动画(ChromatoAnimation)
+#### 3. 渐变动画(ChromatoAnimation)
 动画的主要思路是用`CAKeyframeAnimation`生成渐变帧动画，然后加在`CAGradientLayer`上。
 ````
 CAKeyframeAnimation *chromateAnimate = [CAKeyframeAnimation animationWithKeyPath:@"colors"];
@@ -85,18 +85,18 @@ CAKeyframeAnimation *chromateAnimate = [CAKeyframeAnimation animationWithKeyPath
     
     [chromatoLayer addAnimation:chromateAnimate forKey:@"chromateAnimate"];
 ````
-######效果图：
+###### 效果图：
 
 ![渐变动画](http://upload-images.jianshu.io/upload_images/2963444-f2132ebda68229f3.gif?imageMogr2/auto-orient/strip)
 
 
-####4. Lable字体渐变
+#### 4. Lable字体渐变
 实现思路参考了简书 [这篇文章](http://www.jianshu.com/p/0541e77f8360) :
-######效果图：
+###### 效果图：
 
 ![Lable字体渐变](http://upload-images.jianshu.io/upload_images/2963444-0fe8864649d5e43e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
 
-####5. Lable字体渐变动画
+#### 5. Lable字体渐变动画
 在这提供两种实现方式：
 1. 思路都是从上面一步一步来的，聪明的你可能已经想到了，上面的3+4(渐变动画+lable渐变)，就组合了lable字体渐变动画。
 ````
@@ -126,11 +126,11 @@ CAKeyframeAnimation *chromateAnimate = [CAKeyframeAnimation animationWithKeyPath
 ````
 2. 这个实现想法很简单，但很笨。3(渐变动画)+镂空的image，就是本文开始实现的效果。在此感谢PigUpTree的镂空图片支持(厉害了)。
 
-######效果图：
+###### 效果图：
 ![简书Logo渐变(Logo部分是镂空的)](http://upload-images.jianshu.io/upload_images/2963444-741caae91e81ebeb.gif?imageMogr2/auto-orient/strip)
 ____
 
->###WHGradientHelper头文件
+> ### WHGradientHelper头文件
 
 ````
 #import <UIKit/UIKit.h>
