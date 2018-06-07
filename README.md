@@ -37,11 +37,11 @@ typedef NS_ENUM(NSInteger, WHGradientDirection) {
 //      C         D
 ```
 
-<img src="./ReadmeResource/2.jpeg" width = "80%">
+<img src="./ReadmeResource/2.jpeg"  width = "282" height = "337">
 
 #### 2. 径向渐变(Radial Gradient)
 
-<img src="./ReadmeResource/3.png" width = "80%">
+<img src="./ReadmeResource/3.png"  width = "267" height = "151">
 
 #### 3. 渐变动画(ChromatoAnimation)
 
@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, WHGradientDirection) {
 
 #### 4. Lable字体渐变
 
-<img src="./ReadmeResource/5.png" width = "80%">
+<img src="./ReadmeResource/5.png"  width = "366" height = "108">
 
 #### 5. Lable字体渐变动画
 
